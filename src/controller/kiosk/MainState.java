@@ -22,15 +22,10 @@ public class MainState implements KioskState {
 
         // 다음 상태로 설정
         Menu menu = menus.get(userInput);
-        if (menu.getMenuType() == MenuType.ORDER) {
-            if (menu.getName().equals("Order")){
-                kc.setNextState(new OrderState());
-            } else if (menu.getName().equals("Cancel")) {
-                kc.setNextState(new OrderCancelState());
-            }
-
-        } else {
-            kc.setNextState(new GoodsState(menu.getName()));
+        switch (menu.getName()) {
+            case "Order" -> kc.setNextState(new OrderState());
+            case "Cancel" -> kc.setNextState(new OrderCancelState());
+            default -> kc.setNextState(new GoodsState(menu.getName()));
         }
     }
 }

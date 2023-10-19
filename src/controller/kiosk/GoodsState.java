@@ -29,6 +29,11 @@ public class GoodsState implements KioskState {
         Goods menu = (Goods) menus.get(userInput);
 
         // 다음 상태로 설정
-        kc.setNextState(new PutState(menu));
+        Goods newGoods = Goods.deepCopy(menu);
+        if (menu.getOptions().size() > 0) {
+            kc.setNextState(new OptionState(newGoods));
+        } else {
+            kc.setNextState(new PutState(newGoods));
+        }
     }
 }

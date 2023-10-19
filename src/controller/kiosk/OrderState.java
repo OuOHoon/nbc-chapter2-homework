@@ -24,6 +24,7 @@ public class OrderState implements KioskState {
         int userInput = UserInput.userInput(model.getMenus().size());
         Menu menu = model.getMenus().get(userInput);
         if (menu.getName().equals("주문")) {
+            kc.getKiosk().buy();
             kc.setNextState(new OrderFinishState());
         } else if (menu.getName().equals("메뉴판")) {
             kc.setNextState(new MainState());

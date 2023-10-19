@@ -5,6 +5,9 @@ public class Menu {
     private String description;
     private MenuType menuType;
 
+    public Menu(String name) {
+        this.name = name;
+    }
 
     public Menu(String name, String description, MenuType menuType) {
         this.name = name;

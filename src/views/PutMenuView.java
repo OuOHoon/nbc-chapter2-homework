@@ -11,7 +11,17 @@ public class PutMenuView implements View {
     @Override
     public void print(List<Menu> menus) {
         Goods menu = (Goods) menus.get(0);
-        MyPrint.println("%-16s| W %.1f | %s".formatted(menu.getName(), menu.getPrice(), menu.getDescription()), PrintColor.GREEN);
+        if (menu.isOptionSelected()) {
+            MyPrint.println("%-16s| W %.1f | %s".formatted(
+                    menu.getName() + "(" + menu.getSelectedOption().getName() + ")",
+                    menu.getSelectedOption().getPrice(),
+                    menu.getDescription()), PrintColor.GREEN);
+        } else {
+            MyPrint.println("\"%-16s| W %.1f | %s\"".formatted(
+                    menu.getName(), menu.getPrice(), menu.getDescription()),
+                    PrintColor.GREEN);
+        }
+
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         for (int i = 1; i < menus.size(); i++) {
             MyPrint.printf("%d. ".formatted(i), PrintColor.YELLOW);

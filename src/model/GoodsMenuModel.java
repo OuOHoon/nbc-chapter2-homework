@@ -3,18 +3,23 @@ package model;
 import vo.Goods;
 import vo.Menu;
 import vo.MenuType;
+import vo.Option;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GoodsMenuModel extends AbstractMenuModel<Map<String, List<Menu>>>{
+public class GoodsMenuModel extends AbstractMenuModel<Map<String, List<Menu>>> {
 
     public GoodsMenuModel() {
         menus = new HashMap<>();
         menus.put("Burgers", Arrays.asList(
-                new Goods("ShackBurger", "토마토, 양상추, 쉑소스가 토핑된 치즈버거", MenuType.FOOD, 6.9),
+                new Goods("ShackBurger", "토마토, 양상추, 쉑소스가 토핑된 치즈버거",
+                        MenuType.FOOD, 6.9, Arrays.asList(
+                        new Option("Single", 5.4),
+                        new Option("Double", 9.0))
+                ),
                 new Goods("SmokeShack", "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거", MenuType.FOOD, 8.9),
                 new Goods("Shroom Burger", "몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거", MenuType.FOOD, 9.4),
                 new Goods("Cheeseburger", "포에티오 번과 비프패티, 치즈가 토핑된 치즈버거", MenuType.FOOD, 6.9),

@@ -26,7 +26,7 @@ public class PutState implements KioskState {
         menus.addAll(model.getMenus());
         view.print(menus);
 
-        System.out.println(INPUT_TEXT);
+        System.out.print(INPUT_TEXT);
         int userInput = UserInput.userInput(model.getMenus().size());
         Menu menu = model.getMenus().get(userInput);
         if (menu.getName().equals("확인")) {

@@ -18,7 +18,13 @@ public class OrderMenuView implements View {
         double totalPrice = 0f;
         while (menus.get(i).getMenuType() == MenuType.FOOD) {
             Goods menu = (Goods) menus.get(i);
-            MyPrint.print("%-16s| W %.1f | ".formatted(menu.getName(), menu.getPrice()), PrintColor.RED);
+            if (menu.isOptionSelected()){
+                MyPrint.print("%-16s| W %.1f | ".formatted(
+                        menu.getName() + "(" + menu.getSelectedOption().getName() + ")",
+                        menu.getTotalPrice()), PrintColor.RED);
+            } else{
+                MyPrint.print("%-16s| W %.1f | ".formatted(menu.getName(), menu.getTotalPrice()), PrintColor.RED);
+            }
             System.out.printf("%d개 | %s\n", menu.getCount(), menu.getDescription());
             totalPrice += menu.getTotalPrice();
             i++;
