@@ -49,6 +49,13 @@ public class Goods extends Menu {
         return true;
     }
 
+    public boolean hasOption() {
+        if (options.size() > 0) {
+            return true;
+        }
+        return false;
+    }
+
     public Option getSelectedOption() {
         return selectedOption;
     }
