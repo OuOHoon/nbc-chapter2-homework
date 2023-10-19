@@ -11,7 +11,6 @@ public class GoodsMenuView implements View {
 
     @Override
     public void print(List<Menu> menus) {
-        System.out.println();
         for (int i = 1; i <= menus.size(); i++) {
             Goods item = (Goods) menus.get(i - 1);
             String menuText = "%d. %-16s | W %.1f | ".formatted(i, item.getName(), item.getPrice());

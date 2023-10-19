@@ -9,12 +9,12 @@ public class UserInput {
         int userInput = -1;
         while (userInput == -1) {
             try {
-                userInput = scanner.nextInt();
+                userInput = Integer.parseInt(scanner.nextLine());
                 if (isInvalidInput(userInput, menuSize)) {
                     userInput = -1;
                     throw new NumberFormatException();
                 }
-            } catch (NumberFormatException exception) {
+            } catch (Exception exception) {
                 MyPrint.println("잘못된 입력입니다. 메뉴에 존재하는 숫자를 입력하세요.", PrintColor.RED);
                 System.out.print("번호를 입력해주세요. ");
             }
