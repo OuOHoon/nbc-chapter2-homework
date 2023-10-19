@@ -21,7 +21,7 @@ public class MainState implements KioskState {
         int userInput = UserInput.userInput(menus.size());
 
         // 메뉴에 없는 통계 화면
-        if (userInput == -1) {
+        if (isStatisticMenu(userInput)) {
             kc.setNextState(new StatisticState());
             return;
         }
@@ -33,5 +33,9 @@ public class MainState implements KioskState {
             case "Quit" -> kc.setNextState(new QuitState());
             default -> kc.setNextState(new GoodsState(menu.getName()));
         }
+    }
+
+    private boolean isStatisticMenu(int input) {
+        return input == -1;
     }
 }

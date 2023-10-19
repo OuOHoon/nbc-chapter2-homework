@@ -31,7 +31,8 @@ public class GoodsState implements KioskState {
 
         // 다음 상태로 설정
         Goods newGoods = Goods.deepCopy(menu);
-        if (menu.getOptions().size() > 0) { // 선택할 수 있는 옵션이 있으면 옵션 선택 상태로
+
+        if (menu.hasOption()) {
             kc.setNextState(new OptionState(newGoods));
         } else {
             kc.setNextState(new PutState(newGoods));
