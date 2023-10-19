@@ -19,7 +19,7 @@ public class OrderMenuView implements View {
         while (menus.get(i).getMenuType() == MenuType.FOOD) {
             Goods menu = (Goods) menus.get(i);
             MyPrint.print("%-16s| W %.1f | ".formatted(menu.getName(), menu.getPrice()), PrintColor.RED);
-            System.out.printf("%s\n", menu.getDescription());
+            System.out.printf("%d개 | %s\n", menu.getCount(), menu.getDescription());
             totalPrice += menu.getTotalPrice();
             i++;
         }
