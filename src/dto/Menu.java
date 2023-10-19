@@ -1,4 +1,4 @@
-package domain;
+package dto;
 
 public class Menu {
     private String name;
@@ -7,5 +7,13 @@ public class Menu {
     public Menu(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

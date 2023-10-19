@@ -1,5 +1,9 @@
+import controller.KioskController;
+import model.Kiosk;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        KioskController kioskController = new KioskController();
+        kioskController.run();
     }
 }
