@@ -32,4 +32,7 @@ public class KioskController {
     public void setNextState(KioskState state) {
         this.kioskState = state;
     }
+    public void stop() {
+        isRun = false;
+    }
 }

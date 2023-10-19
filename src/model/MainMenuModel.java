@@ -14,7 +14,8 @@ public class MainMenuModel extends AbstractMenuModel<List<Menu>>{
                 new Menu("Drinks", "매장에서 직접 만드는 음료", MenuType.CATEGORY),
                 new Menu("Beer", "뉴욕 브루클린 브루어리에서 양조한 맥주", MenuType.CATEGORY),
                 new Menu("Order", "장바구니를 확인 후 주문합니다.", MenuType.ORDER),
-                new Menu("Cancel", "진행중인 주문을 취소합니다.", MenuType.ORDER)
+                new Menu("Cancel", "진행중인 주문을 취소합니다.", MenuType.ORDER),
+                new Menu("Quit", "프로그램을 종료합니다.", MenuType.ORDER)
         );
     }
 }

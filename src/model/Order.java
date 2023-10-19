@@ -16,13 +16,19 @@ public class Order {
 
     /**
      * 상품 추가 메소드. 이미 추가된 상품이라면 개수만 증가시키고 아니라면 추가한다.
+     *
      * @param goods
      */
     public void addGoods(Goods goods) {
         Optional<Goods> findGoods = this.goods.stream().filter(
-                item -> item.getName().equals(goods.getName()) &&
-                        item.getSelectedOption().getName()
-                                .equals(goods.getSelectedOption().getName())
+                item -> {
+                    if (goods.isOptionSelected()) {
+                        return item.getName().equals(goods.getName()) &&
+                                item.getSelectedOption().getName()
+                                        .equals(goods.getSelectedOption().getName());
+                    }
+                    return item.getName().equals(goods.getName());
+                }
         ).findFirst();
         if (findGoods.isPresent()) {
             findGoods.get().increaseCount();
