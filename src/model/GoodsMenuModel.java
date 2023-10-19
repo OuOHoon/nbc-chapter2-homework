@@ -1,15 +1,15 @@
 package model;
 
-import dto.Goods;
-import dto.MenuType;
+import vo.Goods;
+import vo.Menu;
+import vo.MenuType;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GoodsMenuModel {
-    private Map<String, List<Goods>> menus;
+public class GoodsMenuModel extends AbstractMenuModel<Map<String, List<Menu>>>{
 
     public GoodsMenuModel() {
         menus = new HashMap<>();
@@ -35,7 +35,7 @@ public class GoodsMenuModel {
         ));
     }
 
-    public List<Goods> getMenusByCategory(String category) {
+    public List<Menu> getMenusByCategory(String category) {
         return menus.get(category);
     }
 }

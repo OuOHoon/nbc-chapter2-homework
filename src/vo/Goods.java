@@ -1,6 +1,4 @@
-package dto;
-
-import dto.Menu;
+package vo;
 
 public class Goods extends Menu {
     private double price;
@@ -8,7 +6,7 @@ public class Goods extends Menu {
     public Goods(String name, String description, MenuType menuType, double price) {
         super(name, description, menuType);
         this.price = price;
-        this.count = 0;
+        this.count = 1;
     }
 
     public double getPrice() {

@@ -1,4 +1,4 @@
-package dto;
+package vo;
 
 public class Menu {
     private String name;

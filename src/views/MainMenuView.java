@@ -1,7 +1,7 @@
 package views;
 
-import dto.Menu;
-import dto.MenuType;
+import vo.Menu;
+import vo.MenuType;
 import util.MyPrint;
 import util.PrintColor;
 
@@ -12,7 +12,7 @@ import java.util.List;
  메인 메뉴 출력 뷰
 
  */
-public class MainMenuView extends View {
+public class MainMenuView implements View {
 
     private static final String INTRO_TEXT = "아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.";
     private static final String SHAKESHAKE_MENU_TEXT = "[ SHAKESHAKE MENU ] ";
@@ -20,6 +20,7 @@ public class MainMenuView extends View {
 
     @Override
     public void print(List<Menu> menus) {
+        System.out.println();
         MyPrint.println(WELCOME_TEXT, PrintColor.GREEN);
         System.out.println(INTRO_TEXT);
 
@@ -36,7 +37,7 @@ public class MainMenuView extends View {
             String menuDescription = "| %s" .formatted(menu.getDescription());
 
             MyPrint.print(menuName, PrintColor.YELLOW);
-            MyPrint.println(menuDescription, PrintColor.WHITE);
+            MyPrint.println(menuDescription, PrintColor.RESET);
             i++;
         }
 
@@ -49,7 +50,7 @@ public class MainMenuView extends View {
             String menuDescription = "| %s" .formatted(menu.getDescription());
 
             MyPrint.print(menuName, PrintColor.YELLOW);
-            MyPrint.println(menuDescription, PrintColor.WHITE);
+            MyPrint.println(menuDescription, PrintColor.RESET);
             i++;
         }
     }

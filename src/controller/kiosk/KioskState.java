@@ -1,9 +1,8 @@
 package controller.kiosk;
 
 import controller.KioskController;
-import dto.Menu;
-import views.View;
 
 public interface KioskState {
-    void handleInteraction(KioskController kioskController, Menu selectMenu);
+    String INPUT_TEXT = "번호를 입력해주세요. ";
+    void handleInteraction(KioskController kc);
 }

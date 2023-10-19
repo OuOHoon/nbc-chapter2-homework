@@ -1,4 +1,4 @@
-package dto;
+package vo;
 
 public enum MenuType {
     CATEGORY,
