@@ -34,7 +34,7 @@ public class KioskController {
         isRun = true;
         while (isRun) {
             view.print(getMenu(view));
-            userInteract(view.getMenus());
+            userInteract();
         }
     }
 
@@ -42,10 +42,12 @@ public class KioskController {
         if (view instanceof MainMenuView) {
             // 이런 식으로 할까.. 말까..
         }
+        return null;
     }
 
-    private Menu userInteract(List<Menu> menus) {
-
+    private Menu userInteract() {
+        List<Menu> menus = getMenu(view);
+        return null;
     }
 
     private static int userInput() {
