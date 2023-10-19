@@ -22,8 +22,8 @@ public class GoodsMenuModel extends AbstractMenuModel<Map<String, List<Menu>>>{
         ));
         menus.put("Frozen Custard", Arrays.asList(
                 new Goods("Shakes", "바닐라, 초콜렛, 솔티드 카라멜", MenuType.FOOD, 5.9),
-                new Goods("Hamburger", "특별한 커스터드 플레이버", MenuType.FOOD, 6.5),
-                new Goods("Hamburger", "신선한 커스터드와 함께 우유와 레드빈이 블렌딩 된 시즈널 쉐이크", MenuType.FOOD, 6.5)
+                new Goods("Shake of the Week", "특별한 커스터드 플레이버", MenuType.FOOD, 6.5),
+                new Goods("Red Bean Shake", "신선한 커스터드와 함께 우유와 레드빈이 블렌딩 된 시즈널 쉐이크", MenuType.FOOD, 6.5)
         ));
         menus.put("Drinks", Arrays.asList(
                 new Goods("Shake-made Lemonade", "매장에서 직접 만드는 상큼한 레몬에이드", MenuType.FOOD, 3.9),
