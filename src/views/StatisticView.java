@@ -17,6 +17,8 @@ public class StatisticView implements View {
         double totalSalesAmount = 0f;
         for (int i = 0; i < menus.size(); i++) {
             Goods goods = (Goods) menus.get(i);
+
+            // TODO: IF문 지우기
             if (goods.isOptionSelected()) {
                 MyPrint.print("- %-26s| %d개 | W %.1f\n" .formatted(goods.getName()
                                 + "(" + goods.getSelectedOption().getName() + ")",
